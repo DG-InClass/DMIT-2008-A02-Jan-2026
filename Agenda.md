@@ -29,8 +29,9 @@
 - Introductions
 - Course Overview
 - GitHub Account Setup
-- Software Setup
-- Workbook Setup
+- [Software Setup](https://dgilleland.github.io/CPSC-1520/tutorials/0010/#installing-the-tools)
+  - [ ] pnpm
+  - [ ] GitHub CLI
 - [JavaScript Review (Intro)](https://dmit-2008.github.io/dmit2008/classes/week-1/day-2)
   - [ ] Variables and block scoping
   - [ ] Functions
@@ -47,6 +48,7 @@
 See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/lessons/w02-d1/) on my Ad-Hoc site.
 
 - [x] First JavaScript Demo + Node Project Setup
+- Workbook Setup
 - **Homework**
   - [ ] Complete any unfinished parts of the first JavaScript Demo
   - [ ] Read the instructions for the *Astronauts* demo and set up the Node project for that starter kit.
