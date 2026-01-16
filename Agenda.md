@@ -55,7 +55,15 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
   - [ ] Complete any unfinished parts of the first JavaScript Demo
   - [ ] Read the instructions for the *Astronauts* demo and set up the Node project for that starter kit.
 
+
 ### Jan 16
+
+- **Homework**
+  - Modify the "Review Break" example to use `document.createElement()` approaches instead of the `.innerHTML` and the template string.
+  - Work on the Astronauts example in the Topic A folder. Follow [these instructions](https://dgilleland.github.io/DMIT-2008/lessons/w02-d1/#astronauts).
+  - Remember to commit and push your code.
+
+### Jan 19
 
 - [ ] Continue JavaScript Review with the [Astronaut](./src/A/review-astronauts-example-START/README.md) demo
 - [ ] Get the Starter Kit for the Weather App in-class demo; this is an *ad-hoc* starter kit that you can quickly grab using `pnpm`.
