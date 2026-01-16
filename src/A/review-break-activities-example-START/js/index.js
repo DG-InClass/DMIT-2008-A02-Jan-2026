@@ -23,8 +23,16 @@ document
         } else {
             // Good input
             const list = document.querySelector('ul'); // there is only one <ul> on the page
-            list.innerHTML += `<li>${topic.trim()}</li>`;
+            list.appendChild(createListItem(topic.trim()));
             topicInput.value = ''; // clear the input
             topicInput.classList.remove('is-invalid');
         }
     });
+
+
+function createListItem(text) {
+    const liElement = document.createElement('li');
+    const textNode = document.createTextNode(text);
+    liElement.appendChild(textNode);
+    return liElement;
+}
