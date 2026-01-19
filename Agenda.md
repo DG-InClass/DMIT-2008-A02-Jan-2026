@@ -65,12 +65,17 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 ### Jan 19
 
-- [ ] Continue JavaScript Review with the [Astronaut](./src/A/review-astronauts-example-START/README.md) demo
-- [ ] Get the Starter Kit for the Weather App in-class demo; this is an *ad-hoc* starter kit that you can quickly grab using `pnpm`.
+- ***Check-In***
+  - [ ] Did you work on the [Astronaut](./src/A/review-astronauts-example-START/README.md) demo?
+  - [ ] QnA
+- **Today**
+  - [ ] Ad-Hoc JavaScript QuickStart to explore 
+  - [ ] Sign up for the [Open Weather API](https://home.openweathermap.org/users/sign_up)
+  - [ ] Get the Starter Kit for the Weather App in-class demo; this is an *ad-hoc* starter kit that you can quickly grab using `pnpm`.
 
-    ```ps
-    pnpm dlx tiged --disable-cache --force DG-InClass/DMIT-2008-A02-Jan-2026/sk/A/weather-app-start ./src/A/weather-app
-    ```
+      ```ps
+      pnpm dlx tiged --disable-cache --force DG-InClass/DMIT-2008-A02-Jan-2026/sk/A/weather-app-start ./src/A/weather-app
+      ```
 
 <!-- 
 
