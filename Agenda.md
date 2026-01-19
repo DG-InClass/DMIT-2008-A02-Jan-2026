@@ -1,6 +1,6 @@
 # Agenda (A01)
 
-> These are my notes on what I plan to teach in each [**upcoming class**](#jan-9). Also check out the [**Draft Planning Calendar**](./Calendar.md)
+> These are my notes on what I plan to teach in each [**upcoming class**](#jan-19). Also check out the [**Draft Planning Calendar**](./Calendar.md)
 >
 > ###### *... Warn those who are idle ..., encourage the disheartened, help the weak, be patient with everyone.*
 >
@@ -69,7 +69,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 - [ ] Get the Starter Kit for the Weather App in-class demo; this is an *ad-hoc* starter kit that you can quickly grab using `pnpm`.
 
     ```ps
-    pnpm dlx tiged --disable-cache --force DG-InClass/DMIT-2008-A01-Sep-2025/sk/A/weather-app-start ./src/A/weather-app
+    pnpm dlx tiged --disable-cache --force DG-InClass/DMIT-2008-A02-Jan-2026/sk/A/weather-app-start ./src/A/weather-app
     ```
 
 <!-- 
