@@ -77,6 +77,12 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
       pnpm dlx tiged --disable-cache --force DG-InClass/DMIT-2008-A02-Jan-2026/sk/A/weather-app-start ./src/A/weather-app
       ```
 
+### Jan 23
+
+- **Today**
+  - [ ] Resume Weather App
+  - [ ] Begin Topic B
+
 <!-- 
 
 ### Sep 15
