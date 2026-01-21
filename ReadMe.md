@@ -1,6 +1,6 @@
 # DMIT-2008 - **Student Workbook** (Sep 2025) ![Docs](https://img.shields.io/badge/Documentation%20Status-%7E10%25%20Minimal%20Outline-lightgrey?logo=Read%20the%20Docs)
 
-> **STUDENT_NAME** - Place your name in this line.
+> **Dan Gilleland** | **A02**
 
 ## Inside this Repository
 

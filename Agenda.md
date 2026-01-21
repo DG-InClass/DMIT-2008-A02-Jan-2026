@@ -1,4 +1,4 @@
-# Agenda (A01)
+# Agenda (A02)
 
 > These are my notes on what I plan to teach in each [**upcoming class**](#jan-19). Also check out the [**Draft Planning Calendar**](./Calendar.md)
 >
