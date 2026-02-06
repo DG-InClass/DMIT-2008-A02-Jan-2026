@@ -12,6 +12,9 @@ export default function TodoList(props) {
     const onTodoTextChange = (event) => {
         console.log(event.target.value);
     }
+    const onAddTodoClick = () => {
+        console.log('Clicked the button');
+    }
 
     return <>
         <TextField
@@ -21,6 +24,6 @@ export default function TodoList(props) {
             sx={ {width: '100%'} }
             onChange={onTodoTextChange}
         />
-        
-    </>
+        <Button variant='contained' onClick={onAddTodoClick}>Add Todo</Button>
+    </> 
 }
