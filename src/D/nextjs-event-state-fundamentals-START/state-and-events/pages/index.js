@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+import TodoList from '../components/TodoList';
 export default function Home() {
   return (
     <>
@@ -26,6 +26,7 @@ export default function Home() {
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
         <main className={styles.main}>
+          <TodoList></TodoList>
         </main>
       </div>
     </>
