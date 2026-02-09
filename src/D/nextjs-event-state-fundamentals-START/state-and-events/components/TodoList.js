@@ -1,5 +1,5 @@
 // ~/components/TodoList.js
-import { Box, Button, Grid, TextField } from '@mui/material';
+import { Box, Button, Grid, TextField, List, ListItem, ListItemText, Typography } from '@mui/material';
 // React's useState hook allows us to manage the internal state/data of our component
 // in a way that the React framework can also notice and handle the "re-render"
 // whenever state changes.
@@ -43,8 +43,18 @@ export default function TodoList(props) {
         />
         <Button variant='contained' onClick={onAddTodoClick}>Add Todo</Button>
         <Grid>
-            Current input text: {todoText}
-            Current list of TODOs: {allTodos.toString()}
+            <List sx={{width: '100%'}}>
+                {
+                    allTodos.map((todoItem, index) => 
+                    <ListItem key={index}>
+                        <ListItemText>
+                            <Typography variant="p" component="div">
+                                {todoItem}
+                            </Typography>
+                        </ListItemText>
+                    </ListItem>)
+                }
+            </List>
         </Grid>
     </> 
 }
