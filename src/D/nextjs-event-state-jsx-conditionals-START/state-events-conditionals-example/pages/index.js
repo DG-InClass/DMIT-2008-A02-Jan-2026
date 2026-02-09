@@ -15,7 +15,63 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+import {useState} from 'react';
+
 export default function Home() {
+  // Represent/capture the form data as "state"
+  const [searchText, setSearchText] = useState('');
+  const [year, setYear] = useState('');
+  // Use state to hold the movies currently rendered
+  const [movies, setMovies] = useState(MOVIE_LIST);
+  // Use state to manage my error message(s) for the user
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // Use a function dedicated to validating user input
+  const validateSearchFilters = () => {
+    // The only "real" thing I need to validate is the year input
+    if(year.trim().length === 0) {
+      setErrorMessage(''); // clear out the error
+    } else {
+      // Check if the year isn't valid
+      // - if it's Not a Number, or
+      // - if it's not a 4-digit number
+      if(isNaN(year.trim()) || year.trim().length !== 4) {
+        setErrorMessage(`${year.trim()} is not a valid year`);
+      } else {
+        setErrorMessage('');
+      }
+    }
+  }
+
+  // Use a function dedicated to filtering the movies
+  const filterMovies = () => {
+    // make a copy of the original movie list
+    let filteredMovies = [...MOVIE_LIST]; // use spread operator
+    // filter on the search text (if applicable)
+    if(searchText.trim() !== '') {
+      // TODO: Apply the filter
+      filteredMovies = filteredMovies.filter((movieData) => 
+        movieData.name.toLowerCase().includes(searchText.trim().toLowerCase())
+      );
+    }
+    // filter on the year information
+    if(year.trim() !== '') {
+      // TODO: Apply the filter
+      filteredMovies = filteredMovies.filter((movieData) => 
+        movieData.year === parseInt(year.trim())
+      );
+    }
+    console.table(filteredMovies);
+    setMovies(filteredMovies); // Update the component state
+  }
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    console.log('Year:', year, 'Search Text:', searchText);
+    validateSearchFilters();
+    filterMovies();
+  }
+
   return (
     <div>
       <Head>
@@ -33,7 +89,7 @@ export default function Home() {
           <Typography variant="h2" component="h2" style={{textAlign: "center"}}>
             Movies
           </Typography>
-          <form style={{width: '100%'}}>
+          <form style={{width: '100%'}} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               <Grid item xs={6}>
                 <TextField
@@ -41,7 +97,8 @@ export default function Home() {
                   label="search..."
                   variant="standard"
                   sx={{width: '100%'}}
-                  
+                  onChange={(e) => { setSearchText(e.target.value); }}
+                  value={searchText}
                 />
               </Grid>
               <Grid item xs={4}>
@@ -50,7 +107,8 @@ export default function Home() {
                   label="year"
                   variant="standard"
                   sx={{width: '100%'}}
-                 
+                  onChange={(e) => { setYear(e.target.value); }}
+                  value={year}
                 />
               </Grid>
               <Grid item xs={2}>
@@ -61,11 +119,25 @@ export default function Home() {
               </Grid>
               <Grid item xs={10}>
                 {/* Add the error message here*/}
+                {
+                  errorMessage === '' ? '' :
+                  <Alert severity="error">{errorMessage}</Alert>
+                }
               </Grid>
             </Grid>
           </form>
           <List sx={{width: `100%`}}>
-          { MOVIE_LIST.map((movieData, index)=> {
+          { 
+            movies.length === 0 ?
+            <ListItem>
+              <ListItemText>
+                <Typography variant="p" component="div">
+                  No results - please search again
+                </Typography>
+              </ListItemText>
+            </ListItem>
+            :
+            movies.map((movieData, index)=> {
               return <ListItem key={index}>
                 <ListItemText>
                   <Typography variant="p" component="div">
