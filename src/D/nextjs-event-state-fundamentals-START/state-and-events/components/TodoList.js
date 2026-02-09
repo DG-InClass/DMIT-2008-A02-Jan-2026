@@ -18,6 +18,7 @@ export default function TodoList(props) {
     const [todoText, setTodoText] = useState('');
     //     \______/  \_________/             \/
     //      getter    setter func             |- Initial value
+    const [allTodos, setAllTodos] = useState([]);
 
     const onTodoTextChange = (event) => {
         console.log(event.target.value);
@@ -25,6 +26,10 @@ export default function TodoList(props) {
     }
     const onAddTodoClick = () => {
         console.log('Clicked the button');
+        // Create a new list that has allTodos along with the new todo item
+        const newListOfTodos = [...allTodos, todoText];
+        setAllTodos(newListOfTodos); // Update our component state
+        setTodoText(''); // Reset the <TextField>
     }
 
     return <>
@@ -39,6 +44,7 @@ export default function TodoList(props) {
         <Button variant='contained' onClick={onAddTodoClick}>Add Todo</Button>
         <Grid>
             Current input text: {todoText}
+            Current list of TODOs: {allTodos.toString()}
         </Grid>
     </> 
 }
