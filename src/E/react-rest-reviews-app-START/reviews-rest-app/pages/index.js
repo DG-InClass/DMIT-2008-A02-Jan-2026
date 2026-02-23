@@ -22,13 +22,47 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 import AdaptationReviewCard from '../components/AdaptationReviewCard';
+import {useState} from 'react';
 
 export default function Home() {
-  const MOCK_ADAPTATION_RATING = [{
-    'title': 'Fight Club',
-    'comment': 'Great movie and book',
-    'rating': 10
-  }]
+  const [reviews, setReviews] = useState([]);
+  const [title, setTitle] = useState('');
+  const [comments, setComments] = useState('');
+  const [rating, setRating] = useState(0); // there is no zero rating
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault(); // stop form from default behaviour
+    console.log('form submitted', {title, comments, rating});
+    // POST request to the backend
+    fetch('http://localhost:5000/reviews', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ title, comment: comments, rating})
+    })
+    .then(response => response.json()) // TODO: more robust response handling
+    .then(data => {
+      // Notice that we're making a new list to replace the current reviews.
+      // The data object we're getting back from the backend is their "echo"
+      // of the object they added to their "database".
+      setReviews([data, ...reviews]);
+    });
+  }
+
+  const loadAllReviews = () => {
+    console.log('load review button clicked'); // sanity check
+    fetch('http://localhost:5000/reviews')
+      .then(response => response.json()) // TODO: A more robust handling
+      .then(data => {
+        // console.log(data); // just to see that my fetch is working
+        setReviews(data);
+      })
+      .catch(err => {
+        // process the err
+      });
+  }
+
   return (
     <div>
       <Head>
@@ -45,7 +79,7 @@ export default function Home() {
       </AppBar>
       <main>
         <Container maxWidth="md">
-          <form>
+          <form onSubmit={handleSubmit}>
             <Grid container spacing={3}>
               <Grid item xs={12} sm={12}>
                 <TextField
@@ -54,6 +88,8 @@ export default function Home() {
                   label="Adaptation Title"
                   fullWidth
                   variant="standard"
+                  value={title}
+                  onChange={(ev) => { setTitle(ev.target.value); }}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -63,6 +99,8 @@ export default function Home() {
                   label="Comments"
                   fullWidth
                   variant="standard"
+                  value={comments}
+                  onChange={(e)=>{setComments(e.target.value);}}
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
@@ -72,6 +110,8 @@ export default function Home() {
                     row
                     aria-labelledby="adaptation-rating"
                     name="rating-buttons-group"
+                    value={rating}
+                    onChange={(e) => {setRating(e.target.value);}}
                   >
                     <FormControlLabel value="1" control={<Radio />} label="1" />
                     <FormControlLabel value="2" control={<Radio />} label="2" />
@@ -104,11 +144,12 @@ export default function Home() {
           >
             <Button
               variant="contained"
+              onClick={loadAllReviews}
             >
               Load All Current Reviews
             </Button>
           </Box>
-          {MOCK_ADAPTATION_RATING.map((adaptation, index)=> {
+          {reviews.map((adaptation, index)=> {
             return <AdaptationReviewCard 
               key={index}
               rating={adaptation.rating}
