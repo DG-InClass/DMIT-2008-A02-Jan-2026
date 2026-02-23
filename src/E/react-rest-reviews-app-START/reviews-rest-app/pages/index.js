@@ -2,14 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 
 import Container from '@mui/material/Container';
 
@@ -27,7 +21,7 @@ import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-
+import AdaptationReviewCard from '../components/AdaptationReviewCard';
 
 export default function Home() {
   const MOCK_ADAPTATION_RATING = [{
@@ -115,27 +109,12 @@ export default function Home() {
             </Button>
           </Box>
           {MOCK_ADAPTATION_RATING.map((adaptation, index)=> {
-            return <Card key={index}>
-              <CardHeader
-                avatar={
-                  <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
-                    {adaptation.rating}
-                  </Avatar>
-                }
-                
-                title={
-                  <Typography variant="body2" color="text.secondary">
-                    {adaptation.title}
-                  </Typography>
-                }
-                
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  {adaptation.comment}
-                </Typography>
-              </CardContent>
-            </Card>
+            return <AdaptationReviewCard 
+              key={index}
+              rating={adaptation.rating}
+              title={adaptation.title}
+              comment={adaptation.comment}
+            />
           })}
 
         </Container>
