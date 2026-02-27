@@ -23,7 +23,7 @@ import Typography from '@mui/material/Typography';
 
 import AdaptationReviewCard from '../components/AdaptationReviewCard';
 import {useState} from 'react';
-import { fetchAllReviews } from '../utils/apiCalls';
+import { fetchAllReviews, postNewReview } from '../utils/apiCalls';
 
 export default function Home() {
   const [reviews, setReviews] = useState([]);
@@ -37,19 +37,16 @@ export default function Home() {
     ev.preventDefault(); // stop form from default behaviour
     console.log('form submitted', {title, comments, rating});
     // POST request to the backend
-    fetch('http://localhost:5000/reviews', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ title, comment: comments, rating})
-    })
-    .then(response => response.json()) // TODO: more robust response handling
+    postNewReview({ title, rating, comment: comments})
     .then(data => {
       // Notice that we're making a new list to replace the current reviews.
       // The data object we're getting back from the backend is their "echo"
       // of the object they added to their "database".
       setReviews([data, ...reviews]);
+      setApiError(''); // clear error message
+    })
+    .catch(err => {
+      setApiError(err.message);
     });
   }
 

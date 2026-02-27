@@ -6,6 +6,18 @@ const fetchAllReviews = () => {
         .catch(summarizeError);
 }
 
+const postNewReview = (data) => {
+    return fetch('http://localhost:5000/reviews', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(handleJsonResponse)
+    .catch(summarizeError);
+}
+
 /**
  * Summarizes the error message for a uniform experience in the front end.
  * @param {Error} err The error that was thrown
@@ -36,4 +48,4 @@ const handleJsonResponse = (res) => {
     return res.json();
 }
 
-export { fetchAllReviews }
+export { fetchAllReviews, postNewReview }
