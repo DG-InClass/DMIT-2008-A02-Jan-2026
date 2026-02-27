@@ -23,12 +23,15 @@ import Typography from '@mui/material/Typography';
 
 import AdaptationReviewCard from '../components/AdaptationReviewCard';
 import {useState} from 'react';
+import { fetchAllReviews } from '../utils/apiCalls';
 
 export default function Home() {
   const [reviews, setReviews] = useState([]);
   const [title, setTitle] = useState('');
   const [comments, setComments] = useState('');
   const [rating, setRating] = useState(0); // there is no zero rating
+  // Track api call errors
+  const [apiError, setApiError] = useState('');
 
   const handleSubmit = (ev) => {
     ev.preventDefault(); // stop form from default behaviour
@@ -52,14 +55,15 @@ export default function Home() {
 
   const loadAllReviews = () => {
     console.log('load review button clicked'); // sanity check
-    fetch('http://localhost:5000/reviews')
-      .then(response => response.json()) // TODO: A more robust handling
+    fetchAllReviews()
       .then(data => {
         // console.log(data); // just to see that my fetch is working
         setReviews(data);
+        setApiError(''); // Reset/clear errors
       })
       .catch(err => {
         // process the err
+        setApiError(err.message);
       });
   }
 
@@ -149,6 +153,12 @@ export default function Home() {
               Load All Current Reviews
             </Button>
           </Box>
+          {
+            apiError && 
+            <Box sx={{pt: 2, pb: 2}}>
+              {apiError}
+            </Box>
+          }
           {reviews.map((adaptation, index)=> {
             return <AdaptationReviewCard 
               key={index}
