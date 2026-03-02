@@ -17,6 +17,12 @@
       "comment": "A classic from long ago, this is a MUST SEE movie.",
       "rating": "10",
       "id": 3
+    },
+    {
+      "title": "Star Wars",
+      "rating": "10",
+      "comment": "This was an amazing movie in its time. I watched it in the theatres when it first came out in the 1970s.",
+      "id": 4
     }
   ]
 }
