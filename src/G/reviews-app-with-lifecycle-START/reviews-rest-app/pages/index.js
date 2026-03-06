@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -28,10 +28,20 @@ import AdaptationReviewCard from '../components/AdaptationReviewCard'
 import { getReviews, postReview } from '../utils/api/reviews.js'
 
 export default function Home() {
+  // We are using the useState() React hook to inform React about our data
+  // in this component. (This is the data this component is responsible for.)
   const [reviews, setReviews] = useState([])
   const [title, setTitle] = useState("")
   const [comments, setComments] = useState("")
   const [rating, setRating] = useState(0)
+
+  // We are using the useEffect() React hook to tell React about the "external"
+  // things that should be triggered when our component is being "mounted" on the page.
+  useEffect(() => {
+    // A component is "mounted" when it has been added into the Document Object Model (DOM/page)
+    console.log('Home component is mounted');
+    loadAllReviewsButton();
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -136,12 +146,7 @@ export default function Home() {
               pb: 2,
             }}
           >
-            <Button
-              variant="contained"
-              onClick={loadAllReviewsButton}
-            >
-              Load All Current Reviews
-            </Button>
+
           </Box>
           {reviews.map((adaptation, index)=> {
             return <AdaptationReviewCard
