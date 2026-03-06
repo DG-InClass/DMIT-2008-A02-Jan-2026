@@ -182,14 +182,22 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 ### Mar 6
 
 - **Today**
-  - [Part G](./src/G/ReadMe.md) - **React Components and LifeCycle**
-  - Continue [Part G](./src/G/ReadMe.md) - **React Components and LifeCycle**
+  - [Part G](./src/G/ReadMe.md) Intro - **React Components and LifeCycle**
 - **Homework**
   - Install the [React Dev Tools](https://react.dev/learn/react-developer-tools) for your browser.
+  - Read the [Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks)
 
 
 
 ### Mar 9
+
+- **Today**
+  - Continue [Part G](./src/G/ReadMe.md) - **React Components and LifeCycle**
+- **Homework**
+
+
+
+### Mar 13
 
 - **Today**
   - [Part H](./src/H/ReadMe.md) - **NextJS Routing and Pages**
@@ -198,7 +206,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 13
+### Mar 16
 
 - **Today**
   - [Part I](./src/I/ReadMe.md) - **SSR**
@@ -208,7 +216,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 16
+### Mar 20
 
 - **Today**
   - Continue [Part I](./src/I/ReadMe.md) - **SSR**
@@ -220,7 +228,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 20
+### Mar 23
 
 - **Today**
   - Testing - the start of a multi-day journey....
@@ -230,7 +238,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 23
+### Mar 27
 
 - **Today**
   - Testing (cont.)
@@ -240,7 +248,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 27
+### Mar 30
 
 - **Today**
   - Begin [Part K](./src/K/ReadMe.md)
@@ -251,7 +259,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 30
+### Apr 3
 
 - **Today**
   - Continue [Part K](./src/K/ReadMe.md)
@@ -263,19 +271,12 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Apr 3
+### Apr 6
 
 - **Today**
   - Complete [Part K](https://github.com/DG-InClass/DMIT-2008-A01-Sep-2025/blob/main/src/K/authentication-example-START/README.md#9-lets-protect-our-dashboard-page-this-should-only-available-to-users-that-are-authenticated-so-we-want-to-reroute-our-unauthenticated-users-lets-do-this-with-our-useauth-hook) <!-- ewww -- >
   - General Review
   - About *Assignment **5***
-- **Homework**
-
-
-
-### Apr 6
-
-- **Today**
 - **Homework**
 
 
