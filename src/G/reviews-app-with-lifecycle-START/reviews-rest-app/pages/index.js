@@ -41,7 +41,9 @@ export default function Home() {
     // A component is "mounted" when it has been added into the Document Object Model (DOM/page)
     console.log('Home component is mounted');
     loadAllReviewsButton();
-  });
+  },[]); // 🚨 Remember to put in the Dependency List array
+  //\/          even if it is just left as an empty array
+  // |--- Read the React Docs on the proper use of this 2nd argument.
 
   const handleSubmit = (event) => {
     event.preventDefault()
