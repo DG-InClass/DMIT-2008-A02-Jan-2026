@@ -45,6 +45,16 @@ export default function Home() {
   //\/          even if it is just left as an empty array
   // |--- Read the React Docs on the proper use of this 2nd argument.
 
+  // for debugging our "reviews" only
+  useEffect(() => {
+    console.log(reviews);
+  }, [reviews]); // This effect is tied to our reviews state.
+
+  const deleteReviewItem = (aReviewId) => {
+    let allReviews = reviews.filter(review => review.id !== aReviewId);
+    setReviews(allReviews);
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
     postReview({
@@ -153,6 +163,8 @@ export default function Home() {
           {reviews.map((adaptation, index)=> {
             return <AdaptationReviewCard
                 key={index}
+                id={adaptation.id}
+                deleteCallback={deleteReviewItem}
                 rating={adaptation.rating}
                 title={adaptation.title}
                 comment={adaptation.comment}
