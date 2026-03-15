@@ -200,13 +200,21 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 ### Mar 13
 
 - **Today**
+  - *Work Period*
+- **Homework**
+
+
+
+### Mar 16
+
+- **Today**
   - [Part H](./src/H/ReadMe.md) - **NextJS Routing and Pages**
     - [Takeaways](./src/H/Takeaways.md)
 - **Homework**
 
 
 
-### Mar 16
+### Mar 20
 
 - **Today**
   - [Part I](./src/I/ReadMe.md) - **SSR**
@@ -216,7 +224,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 20
+### Mar 23
 
 - **Today**
   - Continue [Part I](./src/I/ReadMe.md) - **SSR**
@@ -228,7 +236,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 23
+### Mar 27
 
 - **Today**
   - Testing - the start of a multi-day journey....
@@ -238,7 +246,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 27
+### Mar 30
 
 - **Today**
   - Testing (cont.)
@@ -248,7 +256,19 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Mar 30
+### Apr 3
+
+- **Good Friday ✝️**
+
+
+
+### Apr 6
+
+- **Easter Monday ✝️**
+
+
+
+### Apr 10
 
 - **Today**
   - Begin [Part K](./src/K/ReadMe.md)
@@ -259,7 +279,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Apr 3
+### Apr 13
 
 - **Today**
   - Continue [Part K](./src/K/ReadMe.md)
@@ -271,33 +291,12 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 
 
-### Apr 6
+### Apr 17
 
 - **Today**
   - Complete [Part K](https://github.com/DG-InClass/DMIT-2008-A01-Sep-2025/blob/main/src/K/authentication-example-START/README.md#9-lets-protect-our-dashboard-page-this-should-only-available-to-users-that-are-authenticated-so-we-want-to-reroute-our-unauthenticated-users-lets-do-this-with-our-useauth-hook) <!-- ewww -- >
   - General Review
   - About *Assignment **5***
-- **Homework**
-
-
-
-### Apr 10
-
-- **Today**
-- **Homework**
-
-
-
-### Apr 13
-
-- **Today**
-- **Homework**
-
-
-
-### Apr 17
-
-- **Today**
 - **Homework**
 
 
