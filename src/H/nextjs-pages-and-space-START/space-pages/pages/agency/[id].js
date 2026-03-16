@@ -87,6 +87,7 @@ export default function Agency() {
                                     description={`${spaceCraft.name}`}
                                     buttonCallback={() => {
                                         // TODO: Have the router link/go to the page with the spacecraft details.
+                                        router.push(`/spacecraft/${spaceCraft.id}`)  
                                         console.log("go to the space page")
                                     }}
                                     buttonName="Go to SpaceCraft"
