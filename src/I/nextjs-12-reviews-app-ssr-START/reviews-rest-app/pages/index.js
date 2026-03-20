@@ -27,17 +27,35 @@ import AdaptationReviewCard from '../components/AdaptationReviewCard'
 
 import { getReviews, postReview } from '../utils/api/reviews.js'
 
-export default function Home() {
-  const [reviews, setReviews] = useState([])
+export async function getServerSideProps(context) {
+  const reviews = await getReviews();
+  return {
+    props: {
+      reviews: reviews
+    }
+  }
+}
+
+import { useRouter } from 'next/router';
+
+export default function Home(props) {
+  // const [reviews, setReviews] = useState([])
+  const { reviews } = props;
   const [title, setTitle] = useState("")
   const [comments, setComments] = useState("")
   const [rating, setRating] = useState(0)
 
+  const router = useRouter();
+  const refreshData = () => {
+    // "simulate" a page refresh for our component so that SSR is triggered
+    router.replace(router.asPath); // "client-side transition" that triggers SSR
+  }
+
   // on the client side, our function will fetch
   // all of our reviews on loading of the page.
-  useEffect(()=> {
-    loadAllReviews()
-  }, [])
+  // useEffect(()=> {
+  //   loadAllReviews()
+  // }, [])
 
   // for debugging "reviews" purposes only
   useEffect(()=> {
@@ -48,25 +66,28 @@ export default function Home() {
     let allReviews = reviews.filter((review)=> {
       return review.id !== deleteReviewId
     })
-    setReviews(allReviews)
+    // setReviews(allReviews)
+    refreshData();
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    // TODO: We still have form data that needs to be processed to update the backend.
     postReview({
         title,
         comment: comments,
         rating
       }).then((data)=> {
-        setReviews([data, ...reviews])
+        // setReviews([data, ...reviews])
+        refreshData()
       })
   }
 
-  const loadAllReviews = () => {
-    getReviews().then((data)=> {
-      setReviews(data)
-    })
-  }
+  // const loadAllReviews = () => {
+  //   getReviews().then((data)=> {
+  //     setReviews(data)
+  //   })
+  // }
 
   return (
     <div>
