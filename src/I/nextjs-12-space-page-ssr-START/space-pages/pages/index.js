@@ -13,16 +13,35 @@ import NavBar from '@components/NavBar';
 
 import { getAgencies } from '@utils/api/agencies'
 
-export default function Home() {
-  const [agenciesData, setAgenciesData] = useState([])
+// The `getServerSideProps` is a special name that NextJS will look for
+// as a function to be separated out for running on the web server only
+// (code-splitting)
+// Because we are exporting this function in the same file/module as our
+// <Home> component function, NextJS will associate this function with
+// our component.
+export async function getServerSideProps(context) {
+  // This code/function will never appear on the client (browser).
+  // Instead, it will run on the web server only.
+  const agencies = await getAgencies();
+  return {
+    props: {
+      agenciesData: agencies.results
+    }
+  }
+}
+
+export default function Home(props) {
+  const { agenciesData } = props;
+  // TODO: Remove this later....
+  // const [agenciesData, setAgenciesData] = useState([])
   
-  useEffect(()=> {
-    // fire this on load.
-    getAgencies().then((data)=> {
-      console.log(data)
-      setAgenciesData(data.results)
-    })
-  }, [])
+  // useEffect(()=> {
+  //   // fire this on load.
+  //   getAgencies().then((data)=> {
+  //     console.log(data)
+  //     setAgenciesData(data.results)
+  //   })
+  // }, [])
 
 
   return (

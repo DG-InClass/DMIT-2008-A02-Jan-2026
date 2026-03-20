@@ -1,7 +1,9 @@
 import { BASE_URL } from './base.js'
 
 const getAgencies = () => {
-    return fetch(`${BASE_URL}/agencies?featured=true`)
+    const url = `${BASE_URL}/agencies?featured=true&key=super_secret`;
+    console.log(url);
+    return fetch(url)
         .then((response)=> {
             return response.json()
         }).then((data)=>{
