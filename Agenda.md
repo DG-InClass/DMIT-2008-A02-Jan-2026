@@ -1,6 +1,6 @@
 # Agenda (A02)
 
-> These are my notes on what I plan to teach in each [**upcoming class**](#mar-16). Also check out the [**Draft Planning Calendar**](./Calendar.md)
+> These are my notes on what I plan to teach in each [**upcoming class**](#mar-23). Also check out the [**Draft Planning Calendar**](./Calendar.md)
 >
 > ###### *... Warn those who are idle ..., encourage the disheartened, help the weak, be patient with everyone.*
 >
@@ -229,9 +229,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 ### Mar 23
 
 - **Today**
-  - Continue [Part I](./src/I/ReadMe.md) - **SSR**
-  - *Assignment 4A* - QnA
-  - **Bonus Time:** Listen to me Lecture about Automated Testing... 😃
+  - *Assignment 4A* - QnA + Lab Time
 - **Homework**
 
 
@@ -240,6 +238,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 
 - **Today**
   - Testing - the start of a multi-day journey....
+  - **Bonus Time:** Listen to me Lecture about Automated Testing... 😃
   - Begin [Part J](./src/J/ReadMe.md)
   - Review notes on [**Week 10, Day 2**](https://dgilleland.github.io/DMIT-2008/lessons/w12-d1/)
 - **Homework**
