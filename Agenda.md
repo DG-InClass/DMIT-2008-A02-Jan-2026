@@ -229,7 +229,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 ### Mar 23
 
 - **Today**
-  - *Assignment 4A* - QnA + Lab Time
+  - *Assignment 4B* - QnA + Lab Time
 - **Homework**
 
 
