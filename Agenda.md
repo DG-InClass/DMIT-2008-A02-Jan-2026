@@ -240,6 +240,13 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
   - Testing - the start of a multi-day journey....
   - **Bonus Time:** Listen to me Lecture about Automated Testing... 😃
   - Begin [Part J](./src/J/ReadMe.md)
+    - Go through [this demo](./src/J/next-js-testing-example-START/README.md)
+    - Use this to add the testing libraries under *specific versions* for this demo
+
+      ```ps
+      npm install --save-dev jest@30.2.0 jest-environment-jsdom@30.2.0 @testing-library/react@16.3.0 @testing-library/jest-dom@6.9.1
+      ```
+
   - Review notes on [**Week 10, Day 2**](https://dgilleland.github.io/DMIT-2008/lessons/w12-d1/)
 - **Homework**
 
