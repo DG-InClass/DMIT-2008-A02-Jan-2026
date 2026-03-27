@@ -35,7 +35,7 @@ export default function TodoList () {
       
       <Grid item xs={12}>
         <Typography variant="h2" component="h2">
-          Our Todo List
+          My Todo List
         </Typography>
       </Grid>
       <Grid item xs={10}>
