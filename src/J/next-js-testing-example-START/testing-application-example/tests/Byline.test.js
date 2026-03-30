@@ -34,6 +34,9 @@ test('byline should not have a GitHub Profile', () => {
 });
 
 test('byline link to GitHub Profile should open in a new tab', () => {
-    
+    render(<Byline author="Dan Gilleland" githubUsername="dgilleland" />);
+    const actualElement = screen.getByText('GitHub Profile');
+    expect(actualElement).toBeInTheDocument();
+    expect(actualElement.target).toBe('_blank');
 });
 

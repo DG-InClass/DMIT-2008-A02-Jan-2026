@@ -4,7 +4,7 @@ export default function Byline({author, githubUsername}) {
         <span>by {author}</span>
         {
             githubUsername &&
-            <a href={href}>GitHub Profile</a>
+            <a href={href} target="_blank">GitHub Profile</a>
         }
     </div>
 }
