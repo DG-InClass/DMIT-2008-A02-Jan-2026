@@ -288,6 +288,7 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 ### Apr 13
 
 - **Today**
+  - About *Assignment **5***
   - Continue [Part K](./src/K/ReadMe.md)
     - Authentication
       - Video (6:22): [Why OAuth is Breaking Your App - Fix These 10 Mistakes](https://youtu.be/WrA1XVtaU0g?si=lsGyTqYhl9vmoSfb)
@@ -302,7 +303,6 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
 - **Today**
   - Complete [Part K](https://github.com/DG-InClass/DMIT-2008-A01-Sep-2025/blob/main/src/K/authentication-example-START/README.md#9-lets-protect-our-dashboard-page-this-should-only-available-to-users-that-are-authenticated-so-we-want-to-reroute-our-unauthenticated-users-lets-do-this-with-our-useauth-hook) <!-- ewww -- >
   - General Review
-  - About *Assignment **5***
 - **Homework**
 
 
