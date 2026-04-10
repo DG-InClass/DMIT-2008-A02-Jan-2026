@@ -11,10 +11,20 @@ import Typography from '@mui/material/Typography';
 
 import { deleteReview } from '../utils/api/reviews';
 
+import { useContext } from 'react';
+import { AppNotificationContext } from './state/AppNotification';
+
 export default function AdaptationReviewCard(props) {
+  const { showNotification } = useContext(AppNotificationContext);
+
   const removeCurrentReview = () => {
     deleteReview(props.id).then((data)=> {
       props.removeReview(props.id)
+      // Pop up our notification
+      showNotification({
+        message: `Removed review: "${props.title}"`,
+        severity: 'info'
+      });
     })
   }
 

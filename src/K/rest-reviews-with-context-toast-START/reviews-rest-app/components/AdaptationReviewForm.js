@@ -14,10 +14,15 @@ import TextField from '@mui/material/TextField';
 
 import { postReview } from '../utils/api/reviews';
 
+import { useContext } from 'react';
+import { AppNotificationContext } from './state/AppNotification';
+
 export default function AdaptationReviewForm(props) {
   const [title, setTitle] = useState("")
   const [comments, setComments] = useState("")
   const [rating, setRating] = useState(0)
+
+  const { showNotification } = useContext(AppNotificationContext);
   
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -30,6 +35,10 @@ export default function AdaptationReviewForm(props) {
       rating: rating
     }).then((newReviewData)=> {
       props.setReviews([newReviewData, ...props.reviews])
+      showNotification({
+        message: `New review was added for "${title}"`,
+        severity: 'success'
+      });
       resetForm()
     })    
   }
