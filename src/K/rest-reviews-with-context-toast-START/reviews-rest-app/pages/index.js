@@ -9,8 +9,13 @@ import SEO from '../components/SEO'
 
 import { getReviews } from '../utils/api/reviews'
 
+import { useContext } from 'react';
+import { AppNotificationContext } from '../components/state/AppNotification';
+
 export default function Home() {
   const [reviews, setReviews] = useState([])
+
+  const { showNotification } = useContext(AppNotificationContext);
   
   useEffect(()=> {
     loadAllReviews()
@@ -25,7 +30,11 @@ export default function Home() {
 
   const loadAllReviews = () => {
     getReviews().then((data)=> {
-      setReviews(data)
+      setReviews(data);
+      showNotification({
+        message: 'Loaded reviews successfully',
+        severity: 'info'
+      });
     })
   }
 

@@ -1,0 +1,40 @@
+// ~/components/state/AppNotification.js
+
+import { useState, createContext } from 'react';
+
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+// This component is what will be "in charge" of the background context
+// that React will make available to any child components
+export const AppNotificationContext = createContext({});
+
+export default function AppNotification(props) {
+    const [open, setOpen] = useState(false);
+    const [text, setText] = useState('');
+    const [severity, setSeverity] = useState('success');
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    }
+
+    const showNotification = ({message, severity}) => {
+        setText(message);
+        setSeverity(severity);
+        // display the message
+        setOpen(true);
+    }
+
+    return <AppNotificationContext.Provider value={{showNotification}}>
+        {props.children}
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <MuiAlert elevation={6} variant='filled' onClose={handleClose}
+                severity={severity} sx={{ width: '100%' }}>
+                {text}
+            </MuiAlert>
+        </Snackbar>
+    </AppNotificationContext.Provider>
+}
