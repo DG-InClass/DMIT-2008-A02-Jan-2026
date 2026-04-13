@@ -4,16 +4,27 @@ import { useState, useContext, createContext } from 'react';
 import { login } from '@/utils/api/auth';
 
 export const AuthenticationContext = createContext({});
+import { useRouter } from 'next/router'; // Allow me to redirect
+import { useEffect } from 'react';       // Allow me to "know" if the user has logged out
 
 /**
  * This custom hook supplies context for user authentication.
+ * @params { {} } options
+ * @params { options.protectedPage: boolean } Defaults to false
+ * @params { options.redirectUrl: string } Defaults to the home page
  * @returns { { token: string, user: object, isAuthenticated: boolean, signIn: Function, signOut: Function} }
  */
-export const useAuth = () => {
+export const useAuth = (options = {protectedPage: false, redirectUrl: '/'}) => {
     const context = useContext(AuthenticationContext);
     if(!context) {
         throw new Error('useAuth must be used within an AuthProvider');
     }
+    const router = useRouter();
+    useEffect(() => {
+        if(!context.isAuthenticated && options.protectedPage) {
+            router.push(redirectUrl); 
+        }
+    }, [context.isAuthenticated]); // Updates when .isAuthenticated changes
     return context;
 }
 

@@ -5,15 +5,13 @@ import Typography from '@mui/material/Typography'
 
 import Navbar from '@/components/Navbar'
 
-import { useRouter } from 'next/router';
 import { useAuth } from '@/components/state/AuthProvider';
 
 export default function Dashboard() {
   /* import the user reroute to home.
   This should be a protected page.
   */
-  const { isAuthenticated, user } = useAuth();
-  const router = useRouter();
+  const { user } = useAuth({protectedPage: true});
 
   return (
     <>
