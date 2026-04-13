@@ -291,7 +291,8 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
   - About *Assignment **5***
   - Continue [Part K](./src/K/ReadMe.md)
     - Authentication
-      - Video (6:22): [Why OAuth is Breaking Your App - Fix These 10 Mistakes](https://youtu.be/WrA1XVtaU0g?si=lsGyTqYhl9vmoSfb)
+      - 😢 Unfortunately, this video is now behind a paywall
+        - Video (6:22): [~~Why OAuth is Breaking Your App - Fix These 10 Mistakes~~](https://youtu.be/WrA1XVtaU0g?si=lsGyTqYhl9vmoSfb)
     - This also has a [*backend*](./src/K/authentication-example-START/authentication-mock-backend/) and a [*front-end*](./src/K/authentication-example-START/app-state-auth-example-new/)
     - Again, we will follow the [*instructions*](./src/K/authentication-example-START/README.md) and see where we end up.
       - "email": "rick.james@test.com"
