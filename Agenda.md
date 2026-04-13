@@ -1,6 +1,6 @@
 # Agenda (A02)
 
-> These are my notes on what I plan to teach in each [**upcoming class**](#mar-23). Also check out the [**Draft Planning Calendar**](./Calendar.md)
+> These are my notes on what I plan to teach in each [**upcoming class**](#apr-13). Also check out the [**Draft Planning Calendar**](./Calendar.md)
 >
 > ###### *... Warn those who are idle ..., encourage the disheartened, help the weak, be patient with everyone.*
 >
@@ -294,6 +294,9 @@ See the overview of [today's lesson](https://dgilleland.github.io/DMIT-2008/less
       - Video (6:22): [Why OAuth is Breaking Your App - Fix These 10 Mistakes](https://youtu.be/WrA1XVtaU0g?si=lsGyTqYhl9vmoSfb)
     - This also has a [*backend*](./src/K/authentication-example-START/authentication-mock-backend/) and a [*front-end*](./src/K/authentication-example-START/app-state-auth-example-new/)
     - Again, we will follow the [*instructions*](./src/K/authentication-example-START/README.md) and see where we end up.
+      - "email": "rick.james@test.com"
+      - "password": "simplepassword"
+
 - **Homework**
 
 
