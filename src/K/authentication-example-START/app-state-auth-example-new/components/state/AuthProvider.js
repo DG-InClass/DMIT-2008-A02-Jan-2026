@@ -5,6 +5,18 @@ import { login } from '@/utils/api/auth';
 
 export const AuthenticationContext = createContext({});
 
+/**
+ * This custom hook supplies context for user authentication.
+ * @returns { { token: string, user: object, isAuthenticated: boolean, signIn: Function, signOut: Function} }
+ */
+export const useAuth = () => {
+    const context = useContext(AuthenticationContext);
+    if(!context) {
+        throw new Error('useAuth must be used within an AuthProvider');
+    }
+    return context;
+}
+
 export default function AuthProvider({children}) {
     const [token, setToken] = useState(""); // The "Access Token"
     const [user, setUser] = useState();
